@@ -2,11 +2,11 @@
 FROM bitnami/python:3.10.13-debian-11-r18
 
 # 将当前目录下的所有文件复制到容器的/app目录下
-RUN mkdir /usr/local/fastyushu -p
-COPY . /usr/local/fastyushu
+RUN mkdir /app/fastyushu -p
+COPY . /app/fastyushu
 
 # 设置工作目录为/fastyushu
-WORKDIR /usr/local/fastyushu
+WORKDIR /app/fastyushu
 
 # 安装Python依赖
 RUN echo "deb https://mirrors.163.com/debian/ bullseye main non-free contrib" > /etc/apt/sources.list && \
